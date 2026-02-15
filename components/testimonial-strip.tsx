@@ -1,18 +1,12 @@
-import Image from "next/image";
-
 export function TestimonialStrip() {
   return (
     <section className="border-y border-border/70 bg-secondary/15" aria-label="Trusted operators row">
       <div className="container py-6">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-4">
-            <Image
-              src="/logo-wordmark.svg"
-              alt="Bidlow"
-              width={190}
-              height={28}
-              className="h-7 w-auto opacity-90"
-            />
+            <p className="text-sm font-semibold tracking-tight text-gradient">
+              BIDLOW
+            </p>
             <p className="text-sm font-medium">
               Trusted operators, not hype
             </p>

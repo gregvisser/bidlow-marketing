@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 import { navItems, siteConfig } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -15,19 +14,10 @@ export function Navbar() {
             <Link
               href={siteConfig.links.home}
               aria-label="Bidlow home"
-              className="group inline-flex items-center gap-3 rounded-md px-1 py-1"
+              className="group inline-flex items-center rounded-md px-1 py-1"
             >
-              <Image
-                src="/logo-monogram.svg"
-                alt=""
-                aria-hidden
-                width={28}
-                height={28}
-                priority
-                className="h-7 w-7 opacity-95 transition group-hover:opacity-100"
-              />
               <span className="text-base font-semibold tracking-tight text-gradient">
-                {siteConfig.name}
+                {siteConfig.name.toUpperCase()}
               </span>
             </Link>
             <nav className="hidden items-center gap-5 md:flex" aria-label="Primary">

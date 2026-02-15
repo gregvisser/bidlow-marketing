@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import {
   ArrowRight,
   BookOpen,
@@ -560,14 +559,6 @@ export default function HomePage() {
           <Reveal>
             <Card className="ring-neon">
               <CardContent className="p-8">
-                <Image
-                  src="/logo-shield.svg"
-                  alt=""
-                  aria-hidden
-                  width={96}
-                  height={96}
-                  className="pointer-events-none absolute right-6 top-6 hidden h-24 w-24 opacity-[0.06] sm:block"
-                />
                 <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
                   <div className="space-y-3">
                     <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
