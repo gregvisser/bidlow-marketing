@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" fill="none" style="color: #eaf2ff;">
+  <title>Bidlow</title>
+  <path
+    d="M40 26h44a22 22 0 0 1 0 44H40V26Z"
+    stroke="currentColor"
+    stroke-width="10"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M40 70h50a22 22 0 0 1 0 44H40V70Z"
+    stroke="currentColor"
+    stroke-width="10"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M40 26v88"
+    stroke="currentColor"
+    stroke-width="10"
+    stroke-linecap="round"
+  />
+  <!-- grid/circuit accents -->
+  <path d="M94 40h18" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+  <circle cx="118" cy="40" r="8" fill="currentColor" />
+  <path d="M98 100h14" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+  <circle cx="118" cy="100" r="8" fill="currentColor" />
+</svg>

@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark default (near-black) */
+  --background: 222 52% 6%;
+  --foreground: 210 40% 98%;
+  --card: 222 52% 10%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222 52% 10%;
+  --popover-foreground: 210 40% 98%;
+  /* cyan-blue accent (professional neon) */
+  --primary: 193 92% 58%;
+  --primary-foreground: 222 52% 10%;
+  --secondary: 222 52% 14%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 222 52% 14%;
+  --muted-foreground: 215 20.2% 70%;
+  --accent: 222 52% 14%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 222 52% 20%;
+  --input: 222 52% 20%;
+  --ring: 193 92% 58%;
+  --radius: 0.9rem;
+}
+
+/* Optional: light theme token set (not used by default) */
+.light {
+  --background: 210 40% 98%;
+  --foreground: 222.2 47.4% 11.2%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 47.4% 11.2%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 47.4% 11.2%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  position: relative;
+}
+
+/* Ambient grid + noise (CSS/SVG, Lighthouse-friendly) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image: radial-gradient(
+      900px circle at 20% 10%,
+      hsla(var(--primary) / 0.14),
+      transparent 62%
+    ),
+    radial-gradient(
+      700px circle at 80% 30%,
+      hsla(var(--primary) / 0.08),
+      transparent 58%
+    ),
+    linear-gradient(to right, hsla(var(--border) / 0.55) 1px, transparent 1px),
+    linear-gradient(to bottom, hsla(var(--border) / 0.55) 1px, transparent 1px);
+  background-size: auto, auto, 48px 48px, 48px 48px;
+  background-position: center, center, center, center;
+  opacity: 0.55;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image: url("/noise.svg");
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+}
+
+/* Focus styles for keyboard users */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Balanced typographic defaults */
+.prose-b2b h1,
+.prose-b2b h2,
+.prose-b2b h3 {
+  @apply tracking-tight;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .surface-glass {
+    @apply border bg-card/30 backdrop-blur-md;
+  }
+
+  .bg-grid {
+    background-image: linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: center;
+  }
+
+  .bg-radial-fade {
+    background-image: radial-gradient(
+      800px circle at 20% 10%,
+      hsla(var(--primary) / 0.18),
+      transparent 60%
+    );
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--foreground)),
+      hsl(var(--primary))
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .ring-neon {
+    box-shadow:
+      0 0 0 1px hsla(var(--primary) / 0.16),
+      0 18px 60px -30px hsla(var(--primary) / 0.55);
+  }
+}
+
