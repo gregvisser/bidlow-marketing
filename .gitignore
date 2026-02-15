@@ -1,0 +1,25 @@
+.next/
+node_modules/
+
+# env
+.env
+.env.*.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# build output (optional)
+out/
+
+# legacy static folders (not part of Next.js deploy)
+azure-static-site/
+bidlow-marketing-swa/

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none" style="color: #eaf2ff;">
+  <title>Bidlow</title>
+  <!-- hex frame -->
+  <path
+    d="M80 14 132 44v72l-52 30-52-30V44L80 14Z"
+    stroke="currentColor"
+    stroke-width="8"
+    stroke-linejoin="round"
+  />
+  <!-- inner shield -->
+  <path
+    d="M80 44c18 10 30 10 40 10v34c0 28-18 44-40 54-22-10-40-26-40-54V54c10 0 22 0 40-10Z"
+    stroke="currentColor"
+    stroke-width="8"
+    stroke-linejoin="round"
+  />
+  <!-- circuit trace -->
+  <path d="M54 78h26" stroke="currentColor" stroke-width="7" stroke-linecap="round" />
+  <circle cx="54" cy="78" r="7" fill="currentColor" />
+  <path d="M80 78v30" stroke="currentColor" stroke-width="7" stroke-linecap="round" />
+  <circle cx="80" cy="108" r="7" fill="currentColor" />
+</svg>
