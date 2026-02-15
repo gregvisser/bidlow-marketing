@@ -62,6 +62,8 @@ const tiers: PricingTier[] = [
 ];
 
 export default function ServicesPage() {
+  const calendlyIsExternal = siteConfig.calendlyUrl.startsWith("http");
+
   return (
     <div className="container py-14">
       <div className="mx-auto max-w-3xl space-y-4">
@@ -169,8 +171,8 @@ export default function ServicesPage() {
               <Link
                 className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90"
                 href={siteConfig.calendlyUrl}
-                target="_blank"
-                rel="noreferrer"
+                target={calendlyIsExternal ? "_blank" : undefined}
+                rel={calendlyIsExternal ? "noreferrer" : undefined}
               >
                 Book a call
               </Link>

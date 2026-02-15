@@ -6,7 +6,9 @@ export const siteConfig = {
     "Bidlow diagnoses system flows and bottlenecks, then builds tailored SaaS systems with AI integrations — hardened for production, supported by training, and maintained through ongoing retainers.",
   location: "United Kingdom",
   email: "hello@bidlow.co.uk",
-  calendlyUrl: "https://calendly.com/your-link-here/diagnostic-call",
+  // Set to your real Calendly URL when ready (e.g. https://calendly.com/<org>/<event>).
+  // Default points to the booking section on the contact page to avoid broken placeholder links.
+  calendlyUrl: "/contact#book",
   links: {
     home: "/",
     services: "/services",

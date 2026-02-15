@@ -53,6 +53,8 @@ function SimpleDiagram() {
 }
 
 export default function ApproachPage() {
+  const calendlyIsExternal = siteConfig.calendlyUrl.startsWith("http");
+
   return (
     <div className="container py-14">
       <div className="mx-auto max-w-3xl space-y-4">
@@ -246,8 +248,8 @@ export default function ApproachPage() {
           <Link
             className="underline underline-offset-4"
             href={siteConfig.calendlyUrl}
-            target="_blank"
-            rel="noreferrer"
+            target={calendlyIsExternal ? "_blank" : undefined}
+            rel={calendlyIsExternal ? "noreferrer" : undefined}
           >
             Book a 30‑minute call
           </Link>

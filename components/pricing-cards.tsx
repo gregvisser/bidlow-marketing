@@ -15,6 +15,8 @@ export type PricingTier = {
 };
 
 export function PricingCards({ tiers }: { tiers: PricingTier[] }) {
+  const calendlyIsExternal = siteConfig.calendlyUrl.startsWith("http");
+
   return (
     <div className="grid gap-6 md:grid-cols-3">
       {tiers.map((tier) => (
@@ -70,7 +72,12 @@ export function PricingCards({ tiers }: { tiers: PricingTier[] }) {
       <div className="md:col-span-3">
         <p className="text-sm text-muted-foreground">
           Not sure which package fits?{" "}
-          <Link className="underline underline-offset-4" href={siteConfig.calendlyUrl} target="_blank" rel="noreferrer">
+          <Link
+            className="underline underline-offset-4"
+            href={siteConfig.calendlyUrl}
+            target={calendlyIsExternal ? "_blank" : undefined}
+            rel={calendlyIsExternal ? "noreferrer" : undefined}
+          >
             Book a call
           </Link>{" "}
           and we’ll recommend the smallest sensible starting point.

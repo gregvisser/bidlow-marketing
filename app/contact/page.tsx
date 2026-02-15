@@ -14,6 +14,9 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const bookingHref = siteConfig.calendlyUrl;
+  const hasBookingLink = bookingHref.startsWith("http");
+
   return (
     <div className="container py-14">
       <div className="mx-auto max-w-3xl space-y-4">
@@ -31,7 +34,7 @@ export default function ContactPage() {
         <ContactForm />
 
         <div className="space-y-6">
-          <Card>
+          <Card id="book">
             <CardHeader>
               <CardTitle>Book a 30‑minute discovery call</CardTitle>
             </CardHeader>
@@ -42,11 +45,11 @@ export default function ContactPage() {
               </p>
               <Link
                 className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90"
-                href={siteConfig.calendlyUrl}
-                target="_blank"
+                href={hasBookingLink ? bookingHref : `mailto:${siteConfig.email}?subject=Diagnostic%20call`}
+                target={hasBookingLink ? "_blank" : undefined}
                 rel="noreferrer"
               >
-                Open booking link
+                {hasBookingLink ? "Open booking link" : "Email to arrange a call"}
               </Link>
             </CardContent>
           </Card>

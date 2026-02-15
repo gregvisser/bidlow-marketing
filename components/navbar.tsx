@@ -5,6 +5,8 @@ import { navItems, siteConfig } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 
 export function Navbar() {
+  const calendlyIsExternal = siteConfig.calendlyUrl.startsWith("http");
+
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/55 backdrop-blur-xl">
       <div className="container">
@@ -66,7 +68,11 @@ export function Navbar() {
                 </nav>
               </div>
             </details>
-            <Link href={siteConfig.calendlyUrl} target="_blank" rel="noreferrer">
+            <Link
+              href={siteConfig.calendlyUrl}
+              target={calendlyIsExternal ? "_blank" : undefined}
+              rel={calendlyIsExternal ? "noreferrer" : undefined}
+            >
               <Button className="whitespace-nowrap">Book a Diagnostic Call</Button>
             </Link>
           </div>

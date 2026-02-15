@@ -50,6 +50,8 @@ const faqs = [
 ];
 
 export default function HomePage() {
+  const calendlyIsExternal = siteConfig.calendlyUrl.startsWith("http");
+
   return (
     <div className="prose-b2b">
       {/* Hero */}
@@ -72,7 +74,11 @@ export default function HomePage() {
                 security, ownership, and adoption designed in.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
-                <Link href={siteConfig.calendlyUrl} target="_blank" rel="noreferrer">
+                <Link
+                  href={siteConfig.calendlyUrl}
+                  target={calendlyIsExternal ? "_blank" : undefined}
+                  rel={calendlyIsExternal ? "noreferrer" : undefined}
+                >
                   <Button size="lg">Book a diagnostic call</Button>
                 </Link>
                 <Link href="#process">
@@ -585,7 +591,11 @@ export default function HomePage() {
                   </div>
 
                   <div className="flex flex-col gap-3 sm:flex-row md:flex-col md:items-stretch">
-                    <Link href={siteConfig.calendlyUrl} target="_blank" rel="noreferrer">
+                    <Link
+                      href={siteConfig.calendlyUrl}
+                      target={calendlyIsExternal ? "_blank" : undefined}
+                      rel={calendlyIsExternal ? "noreferrer" : undefined}
+                    >
                       <Button size="lg" className="w-full">
                         Book a diagnostic call
                       </Button>
